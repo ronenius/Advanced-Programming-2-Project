@@ -1,0 +1,40 @@
+#loginform {
+    background-color:aliceblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.center{
+    margin-bottom: 20vh;
+    width: 40vh;
+}
+
+#floatingUsername{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#floatingPassword{
+    margin-bottom: 5vh;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+
+.btn-grad {background-image: linear-gradient(to bottom, #3a7bd5  5%,#00d2ff 100%)}
+.btn-grad {
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+}
+
+a{
+    text-decoration: none;
+}
