@@ -1,5 +1,8 @@
-function CheckLogIn(username, labelUsername, password, labelPassword, validationText) {
-    ErrorLogIn(username, labelUsername, password, labelPassword, validationText);
+import ConnectToMain from "./ConnectToMain.js";
+
+function CheckLogIn(username, labelUsername, password, labelPassword, validationText, navigate) {
+    ConnectToMain(username.current.value, password.current.value, navigate);
+    //ErrorLogIn(username, labelUsername, password, labelPassword, validationText);
 }
 
 function ErrorLogIn(username, labelUsername, password, labelPassword, validationText){

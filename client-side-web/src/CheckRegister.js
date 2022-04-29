@@ -1,4 +1,6 @@
-function CheckRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult) {
+import ConnectToMain from "./ConnectToMain.js";
+
+function CheckRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult, navigate) {
     if (username.current.value.length === 0) {
         validationText.current.innerHTML = "Username must not be empty!";
         ErrorRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult);
@@ -9,9 +11,12 @@ function CheckRegister(username, labelUsername, password, labelPassword, verifyP
         ErrorRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult);
         return;
     }
-    if (password.current.value === verifyPassword.verifyPassword.value) {
-        
+    if (password.current.value !== verifyPassword.current.value) {
+        validationText.current.innerHTML = "Passwords don't match!";
+        ErrorRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult);
+        return;
     }
+    ConnectToMain(username.current.value, password.current.value, navigate);
 }
 
 function ErrorRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult) {

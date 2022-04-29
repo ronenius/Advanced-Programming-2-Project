@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import logo from './logo.png'
 import './Login.css'
 import { Link } from 'react-router-dom';
-import checkLogIn from './CheckLogIn.js'
+import CheckLogIn from './CheckLogIn.js'
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
     const username = useRef(null);
@@ -10,10 +11,11 @@ function Login() {
     const password = useRef(null);
     const labelPassword = useRef(null);
     const validationText = useRef(null);
+    const navigate = useNavigate();
 
     function validation(e) {
         e.preventDefault();
-        checkLogIn(username, labelUsername, password, labelPassword, validationText);
+        CheckLogIn(username, labelUsername, password, labelPassword, validationText, navigate);
     }
 
     return (
@@ -31,7 +33,7 @@ function Login() {
                         <label htmlFor="floatingPassword">Password</label>
                     </div>
                     <div ref={validationText} id="validationText" hidden>Username or password are not correct!</div>
-                    <div className="container">
+                    <div id="buttons" className="container">
                         <div className="row">
                             <div className="col">
                                 <button className="w-100 btn btn-lg btn-primary btn-grad" onClick={validation}>Sign in</button>
