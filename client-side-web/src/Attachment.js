@@ -6,7 +6,7 @@ import chatManagement from "./chatManagement";
 function attachmentButton(event) {
     let files = event.target.files;
     let friends = users[userIdx.value].friends;
-    if (files.length==0)
+    if (files.length === 0)
         return;
     let reader = new FileReader();
     reader.onload = function(e) {

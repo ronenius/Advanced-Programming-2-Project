@@ -6,7 +6,7 @@ const users = [{username:"Shlomy", password:"Shlomy123", name:"Shlomy", picture:
 {username:"Bob", password:"Bob123", name:"Bob", picture:"Pictures/contatcPicture.png", friends:[]},
 {username:"Eve", password:"Eve123", name:"Eve", picture:"Pictures/contatcPicture.png", friends:[]},
 {username:"Teodor", password:"Teodor123", name:"teodor", picture:"Pictures/contatcPicture.png", friends:[]}];
-export function connect(i,j) {
+export function connect(i, j) {
     users[i].friends.push({friend:users[j],chat:[{
         contance : "hello",
         hour:0,
@@ -27,25 +27,26 @@ export function connect(i,j) {
     ]});
 }
 export function initUsers() {
-    connect(0,1);
-    connect(0,2);
-    connect(0,3);
-    connect(0,4);
-    connect(0,5);
-    connect(1,3);
-    connect(1,4);
-    connect(1,5);
-    connect(1,6);
-    connect(2,3);
-    connect(2,4);
-    connect(2,6);
-    connect(2,7);
-    connect(3,5);
-    connect(3,7);
-    connect(4,6);
-    connect(4,7);
-    connect(5,6);
-    connect(5,7);
-    connect(6,7);
+    connect(0, 1);
+    connect(0, 2);
+    connect(0, 3);
+    connect(0, 4);
+    connect(0, 5);
+    connect(1, 3);
+    connect(1, 4);
+    connect(1, 5);
+    connect(1, 6);
+    connect(2, 3);
+    connect(2, 4);
+    connect(2, 6);
+    connect(2, 7);
+    connect(3, 5);
+    connect(3, 7);
+    connect(4, 6);
+    connect(4, 7);
+    connect(5, 6);
+    connect(5, 7);
+    connect(6, 7);
 }
+
 export default users;

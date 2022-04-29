@@ -7,8 +7,9 @@
     text-align: center;
 }
 
-.center2{
-    margin-bottom: 8vh;
+#registerblock {
+    height: 100vh;
+    padding-top: 8vh;
     width: 40vh;
 }
 
@@ -49,8 +50,18 @@
    border-radius: 10px;
    display: block;
    height: 100%;
- }
+}
  
+#validationText2 {
+    margin-bottom: 0vh;
+    text-align: left;
+    color: red;
+}
+
 a{
     text-decoration: none;
+}
+
+#buttons2{
+    padding: 0;
 }
