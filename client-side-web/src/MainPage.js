@@ -13,6 +13,8 @@ import sendMessageImage from './Pictures/sendMessage.png';
 import record from './Pictures/record.png';
 import initContact from './InitializeContacts';
 import initUser from './initUser';
+import userIdx from './UserIdx';
+import users from './DataBase';
 
 function App() {
   return (
@@ -85,8 +87,8 @@ function App() {
                             <div id="chatPlaceHolder" style={{height: "100%",overflowY: "auto", overflowX: "hidden"}}>
                                 hello
                             </div>
-                            <div id="sendingBoard" style={{bottom: "0%",position: "absolute",width: "100%",height: "50px", backgroundColor: "aliceblue", visibility: "visible"}}>
-                                <input type="text" style={{width: "80%", bottom: "20%", position: "inherit"}} id="typeMessage"></input>
+                            <div id="sendingBoard" style={{bottom: "0%",position: "absolute",width: "100%",height: "50px", backgroundColor: "aliceblue", visibility: "hidden"}}>
+                                <input type="text" style={{width: "80%", bottom: "20%", position: "inherit"}} id="typeMessage" autoComplete="off"></input>
                                 <button class="btn" style={{left: "80%", bottom:"20%", position: "inherit", color:"aliceblue", width: "5%"}} id="sendButton" onClick={sendMessage}>
                                     <img src={sendMessageImage} style={{width: "100%"}} alt=""></img>
                                 </button>
