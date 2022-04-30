@@ -35,7 +35,7 @@ function searchMessage() {
 function prevResult() {
     /*if (messageIdx==messagesSearched.length)
         messageIdx--;*/
-    if (messageIdx!=0) {
+    if (messageIdx!==0) {
         messageIdx--;
         //console.log("jumped up to " + messagesSearched[messageIdx].id);
         document.getElementById("chatPlaceHolder").scrollTo(0,messagesSearched[messageIdx].offsetTop);
@@ -44,7 +44,7 @@ function prevResult() {
 function nextResult() {
     /*if (messageIdx==-1)
         messageIdx++;*/
-    if (messageIdx!=messagesSearched.length - 1) {
+    if (messageIdx!==messagesSearched.length - 1) {
         messageIdx++;
         //console.log("jumped down to " + messagesSearched[messageIdx].id);
         document.getElementById("chatPlaceHolder").scrollTo(0,messagesSearched[messageIdx].offsetTop);

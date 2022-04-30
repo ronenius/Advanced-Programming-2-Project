@@ -14,11 +14,7 @@ import Attachment from './Pictures/Attachment.png';
 import sendMessageImage from './Pictures/sendMessage.png';
 import record from './Pictures/record.png';
 import addVideo from "./Pictures/addVideo.png"
-import initContact from './InitializeContacts';
 import initUser from './initUser';
-import userIdx from './UserIdx';
-import users from './DataBase';
-import logo from './Pictures/logo.png'
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 

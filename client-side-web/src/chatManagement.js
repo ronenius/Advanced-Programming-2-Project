@@ -36,9 +36,7 @@ function updateTime(friend) {
     time.style.fontSize = "100%";
     time.innerHTML = timeWriter.getTime(friend.chat[friend.chat.length - 1]) + "<br>" + timeWriter.getDate(friend.chat[friend.chat.length - 1]);
     let lastMessage = document.getElementById(friend.friend.username + "lastmessage");
-    console.log("1",friend.chat,"2",lastMessage);
     lastMessage.innerHTML = getLastMessage(friend.chat);
-    console.log("1", friend.chat, "2", lastMessage.innerHTML);
 }
 
 export default { displayChat, chatElement, updateTime };

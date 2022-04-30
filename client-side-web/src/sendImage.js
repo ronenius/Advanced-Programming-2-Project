@@ -9,7 +9,7 @@ function addImageButton(event) {
     for (let i = 0; i < files.length; i++) {
         let reader = new FileReader();
         reader.onload = function(e) {
-            friends[contactIdx.value].chat.push(chatManagement.chatElement("<img src=\""+e.target.result+"\" style=\"max-width:30vh\"><br><br>",true, "image"));
+            friends[contactIdx.value].chat.push(chatManagement.chatElement("<img src=\""+e.target.result+"\" style=\"max-width:30vh\"><br><br>",true));
             let friend = friends[contactIdx.value].friend;
             let idx = 0;
             for (let i = 0; i < friend.friends.length; i++) {
@@ -18,7 +18,7 @@ function addImageButton(event) {
                     break;
                 }
             }
-            friend.friends[idx].chat.push(chatManagement.chatElement("<img src=\""+e.target.result+"\" style=\"max-width:30vh\"><br><br>", false, "image"));
+            friend.friends[idx].chat.push(chatManagement.chatElement("<img src=\""+e.target.result+"\" style=\"max-width:30vh\"><br><br>", false));
             chatManagement.displayChat(friends[contactIdx.value]);
             chatManagement.updateTime(friends[contactIdx.value]);
             //resetMessageSearch();
