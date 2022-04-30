@@ -2,7 +2,7 @@ import users from "./DataBase";
 import userIdx from "./UserIdx";
 import contactIdx from "./contactIdx";
 import chatManagement from "./chatManagement";
-
+import searchMessageManagement from "./searchMessageManagement";
 function addImageButton(event) {
     let files = event.target.files;
     let friends = users[userIdx.value].friends;
@@ -21,7 +21,7 @@ function addImageButton(event) {
             friend.friends[idx].chat.push(chatManagement.chatElement("<img src=\""+e.target.result+"\" style=\"max-width:30vh\"><br><br>", false, "image"));
             chatManagement.displayChat(friends[contactIdx.value]);
             chatManagement.updateTime(friends[contactIdx.value]);
-            //resetMessageSearch();
+            searchMessageManagement.resetMessageSearch();
         }
         reader.readAsDataURL(files[i]);
     }

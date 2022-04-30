@@ -5,7 +5,7 @@ let messageIdx;
 let messagesSearched = [];
 
 function resetMessageSearch() {
-    let friends = users[userIdx].friends
+    let friends = users[userIdx.value].friends
     messagesSearched = friends[contactIdx.value].chat;
     document.getElementById("searchMessage").value = "";
     messageIdx = messagesSearched.length - 1;
@@ -30,11 +30,15 @@ function searchMessage() {
     messageIdx = messagesSearched.length - 1;
     document.getElementById("prevResult").disabled=false;
     document.getElementById("nextResult").disabled=false;
-    console.log(messagesSearched);
+    if (messagesSearched.length!==0)
+        document.getElementById("chatPlaceHolder").scrollTo(0,messagesSearched[messageIdx].offsetTop);
 }
 function prevResult() {
     /*if (messageIdx==messagesSearched.length)
         messageIdx--;*/
+    console.log(messagesSearched);
+    if (messagesSearched.length === 0)
+        return;
     if (messageIdx!=0) {
         messageIdx--;
         //console.log("jumped up to " + messagesSearched[messageIdx].id);
@@ -44,6 +48,8 @@ function prevResult() {
 function nextResult() {
     /*if (messageIdx==-1)
         messageIdx++;*/
+    if (messagesSearched.length === 0)
+        return;
     if (messageIdx!=messagesSearched.length - 1) {
         messageIdx++;
         //console.log("jumped down to " + messagesSearched[messageIdx].id);
