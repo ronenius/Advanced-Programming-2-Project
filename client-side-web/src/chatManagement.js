@@ -7,11 +7,8 @@ import getLastMessage from "./lastMessage.js";
 function displayChat(contact) {
     let PlaceHolder = document.getElementById("chatPlaceHolder");
     PlaceHolder.innerHTML="";
-    console.log(contact);
     for (let i = 0; i < contact.chat.length; i++) {
-        console.log(contact);
         PlaceHolder.innerHTML+=addMessage(contact.chat[i],contact.friend.name, contact.friend.username, i);
-        console.log("added");
     }
     padding.addPadding(PlaceHolder);
     PlaceHolder.scrollTo(0,PlaceHolder.scrollHeight);
@@ -36,9 +33,7 @@ function updateTime(friend) {
     time.style.fontSize = "100%";
     time.innerHTML = timeWriter.getTime(friend.chat[friend.chat.length - 1]) + "<br>" + timeWriter.getDate(friend.chat[friend.chat.length - 1]);
     let lastMessage = document.getElementById(friend.friend.username + "lastmessage");
-    console.log("1",friend.chat,"2",lastMessage);
     lastMessage.innerHTML = getLastMessage(friend.chat);
-    console.log("1", friend.chat, "2", lastMessage.innerHTML);
 }
 
 export default { displayChat, chatElement, updateTime };

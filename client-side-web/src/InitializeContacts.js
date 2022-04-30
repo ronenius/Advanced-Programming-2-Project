@@ -13,7 +13,6 @@ function initContact() {
         if(f!=null) {
             f.onclick = function() {
                 PlaceHolder.innerHTML="";
-                console.log(friends[i].chat);
                 for (let j = 0; j < friends[i].chat.length; j++) {
                     PlaceHolder.innerHTML += addMessage(friends[i].chat[j],friends[i].friend.name, friends[i].friend.username, j);
                 }
