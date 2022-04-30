@@ -14,7 +14,7 @@ function displayChat(contact) {
     padding.addPadding(PlaceHolder);
     PlaceHolder.scrollTo(0,PlaceHolder.scrollHeight);
 }
-function chatElement(s, to) {
+function chatElement(s, to, messageType) {
     var time = new Date();
     var x = {
         contance : s,
@@ -23,7 +23,8 @@ function chatElement(s, to) {
         day:time.getDate(),
         month:time.getMonth() + 1,
         year:time.getFullYear(),
-        sent:to
+        sent:to,
+        type:messageType
     };
     return x;
 }

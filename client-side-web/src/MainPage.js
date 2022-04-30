@@ -6,12 +6,14 @@ import sendImage from './sendImage';
 import attachmentButton from './Attachment';
 import recordManeger from './record';
 import searchMessageManagement from "./searchMessageManagement"
+import videoButton from './VideoButton';
 import "./InsertPictrues.css";
 import add_contact2 from './Pictures/add_contact2.png';
 import addImage from './Pictures/addImage.png';
 import Attachment from './Pictures/Attachment.png';
 import sendMessageImage from './Pictures/sendMessage.png';
 import record from './Pictures/record.png';
+import addVideo from "./Pictures/addVideo.png"
 import initContact from './InitializeContacts';
 import initUser from './initUser';
 import userIdx from './UserIdx';
@@ -94,19 +96,19 @@ function MainPage() {
                             <td style={{ width: "70%", position: "relative", height: "80vh" }} id="chatBackground">
                                 <div id="chatPlaceHolder" style={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}></div>
                                 <div id="sendingBoard" style={{ bottom: "0%", position: "absolute", width: "100%", height: "50px", backgroundColor: "aliceblue", visibility: "hidden" }}>
-                                    <input type="text" style={{ width: "80%", bottom: "20%", position: "inherit" }} id="typeMessage" autoComplete="off"></input>
-                                    <button className="btn" style={{ left: "80%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }} id="sendButton" onClick={sendMessage}>
+                                    <input type="text" style={{ width: "75%", bottom: "20%", position: "inherit" }} id="typeMessage" autoComplete="off"></input>
+                                    <button className="btn" style={{ left: "75%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }} id="sendButton" onClick={sendMessage}>
                                         <img src={sendMessageImage} style={{ width: "100%" }} alt=""></img>
                                     </button>
-                                    <label className="btn" style={{ left: "85%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }}>
+                                    <label className="btn" style={{ left: "80%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }}>
                                         <input type="file" id="addImageButton" style={{ visibility: "hidden", width: "100%" }} onChange={sendImage} accept="image/*"></input>
                                         <img src={addImage} style={{ width: "100%" }} alt=""></img>
                                     </label>
-                                    <label className="btn" style={{ left: "90%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }}>
+                                    <label className="btn" style={{ left: "85%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }}>
                                         <input type="file" id="attachmentButton" style={{ visibility: "hidden", width: "100%" }} onChange={attachmentButton}></input>
                                         <img src={Attachment} style={{ width: "100%" }} alt=""></img>
                                     </label>
-                                    <button className="btn" style={{ left: "95%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }} id="recordButton" data-bs-toggle="modal" data-bs-target="#recordModal">
+                                    <button className="btn" style={{ left: "90%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }} id="recordButton" data-bs-toggle="modal" data-bs-target="#recordModal">
                                         <img src={record} style={{ width: "100%" }} alt=""></img>
                                     </button>
                                     <div className="modal fade" id="recordModal" tabIndex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
@@ -133,6 +135,10 @@ function MainPage() {
                                             </div>
                                         </div>
                                     </div>
+                                    <label className="btn" style={{ left: "95%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }}>
+                                        <input type="file" id='inputVideo' style={{visibility:"hidden", width:"100%"}} accept="Video/*" onChange={videoButton}></input>
+                                        <img src={addVideo} style={{ width: "100%" }} alt=""></img>
+                                    </label>
                                 </div>
                             </td>
                         </tr>

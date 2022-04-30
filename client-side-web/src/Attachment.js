@@ -10,7 +10,7 @@ function attachmentButton(event) {
         return;
     let reader = new FileReader();
     reader.onload = function(e) {
-        friends[contactIdx.value].chat.push(chatManagement.chatElement("<a href=\""+e.target.result+"\" download=\""+files[0].name+"\">"+files[0].name+"</a>",true));
+        friends[contactIdx.value].chat.push(chatManagement.chatElement("<a href=\""+e.target.result+"\" download=\""+files[0].name+"\">"+files[0].name+"</a>",true, "file"));
         let friend = friends[contactIdx.value].friend;
         let idx = 0;
         for (let i = 0; i < friend.friends.length; i++) {
@@ -19,7 +19,7 @@ function attachmentButton(event) {
                 break;
             }
         }
-        friend.friends[idx].chat.push(chatManagement.chatElement("<a href=\""+e.target.result+"\" download=\""+files[0].name+"\">"+files[0].name+"</a>", false));
+        friend.friends[idx].chat.push(chatManagement.chatElement("<a href=\""+e.target.result+"\" download=\""+files[0].name+"\">"+files[0].name+"</a>", false, "file"));
         chatManagement.displayChat(friends[contactIdx.value]);
         chatManagement.updateTime(friends[contactIdx.value]);
         event.target.value=null;
