@@ -69,7 +69,7 @@ function recordingConfirm() {
     console.log("sending");
     if (recordState==2) {
         document.getElementById("stopRecord").onclick();
-        friends[contactIdx.value].chat.push(chatManagement.chatElement("<audio src=\""+source+"\" style=\"max-width:30vh;\" controls></audio>"), true);
+        friends[contactIdx.value].chat.push(chatManagement.chatElement("<audio src=\""+source+"\" style=\"max-width:30vh;\" controls></audio>", true));
         let friend = friends[contactIdx.value].friend;
         let idx = 0;
         for (let i = 0; i < friend.friends.length; i++) {
@@ -78,7 +78,7 @@ function recordingConfirm() {
                 break;
             }
         }
-        friends[contactIdx.value].chat.push(chatManagement.chatElement("<audio src=\""+source+"\" style=\"max-width:30vh;\" controls></audio>"), false);
+        friend.friends[idx].chat.push(chatManagement.chatElement("<audio src=\""+source+"\" style=\"max-width:30vh;\" controls></audio>", false));
         chatManagement.displayChat(friends[contactIdx.value]);
         document.getElementById("recordEndSign").style.visibility = "hidden";
         chatManagement.updateTime(friends[contactIdx.value]);

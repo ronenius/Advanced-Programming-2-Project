@@ -2,7 +2,7 @@ import userIdx from "./UserIdx";
 import users from "./DataBase.js"
 import addMessage from "./AddMessage";
 import contactIdx from "./contactIdx";
-
+import updateChatBoard from "./updateChatBoard"
 function initContact() {
     let friends = users[userIdx.value].friends;
     let PlaceHolder = document.getElementById("chatPlaceHolder");
@@ -17,7 +17,7 @@ function initContact() {
                 }
                 contactIdx.value = i;
                 PlaceHolder.scrollTo(0,PlaceHolder.scrollHeight);
-                //updateChatBoard();
+                updateChatBoard();
                 document.getElementById("sendingBoard").style.visibility = "visible";
             }
     }

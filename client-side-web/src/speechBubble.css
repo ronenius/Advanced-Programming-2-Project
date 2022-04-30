@@ -5,10 +5,10 @@ body {
   }
   
   .speech-wrapper {
-    padding: 30px 40px;
+    padding: 0px 40px 30px 40px;
   }
   .speech-wrapper .bubble {
-    width: min-content;
+    width: max-content;
     height: auto;
     display: block;
     background: #c9ecc4;
@@ -17,11 +17,11 @@ body {
     position: relative;
     margin: 0 0 25px;
     clear: both;
+    max-width: 70vh;
+    word-break: break-all;
   }
   .speech-wrapper .bubble.alt {
     float: right;
-    width: min-content;
-    clear: both;
   }
   .speech-wrapper .bubble .txt {
     padding: 8px 55px 8px 14px;
