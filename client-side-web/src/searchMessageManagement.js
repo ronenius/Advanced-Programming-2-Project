@@ -3,6 +3,7 @@ import users from "./DataBase";
 import userIdx from "./UserIdx";
 let messageIdx;
 let messagesSearched = [];
+
 function resetMessageSearch() {
     let friends = users[userIdx].friends
     messagesSearched = friends[contactIdx.value].chat;
