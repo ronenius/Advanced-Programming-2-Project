@@ -1,6 +1,9 @@
 #chatBackground {
     background-image: url(Pictures/whatsappBackground.jpg);
 }
+#pageBackground {
+    background-image: url(Pictures/pageBackground.png);
+}
 /*#sendButton img {
     src:url(Pictures/sendMessage.png);
 }

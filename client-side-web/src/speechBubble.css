@@ -5,7 +5,7 @@ body {
   }
   
   .speech-wrapper {
-    padding: 0px 40px 30px 40px;
+    padding: 0px 40px 0px 40px;
   }
   .speech-wrapper .bubble {
     width: max-content;
@@ -13,9 +13,9 @@ body {
     display: block;
     background: #c9ecc4;
     border-radius: 4px;
-    box-shadow: 2px 8px 5px #000;
+    box-shadow: 2px 2px 2px #000;
     position: relative;
-    margin: 0 0 25px;
+    margin: 0 0 5px;
     clear: both;
     max-width: 70vh;
     word-break: break-all;
