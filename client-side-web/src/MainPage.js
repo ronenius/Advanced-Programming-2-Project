@@ -11,10 +11,12 @@ import addImage from './Pictures/addImage.png';
 import Attachment from './Pictures/Attachment.png';
 import sendMessageImage from './Pictures/sendMessage.png';
 import record from './Pictures/record.png';
+import initContact from './InitializeContacts';
 import initUser from './initUser';
 import userIdx from './UserIdx';
 import users from './DataBase';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
     useEffect(() => {
@@ -30,7 +32,10 @@ function MainPage() {
                             <td style={{ width: "30%" }}>
                                 <div style={{ paddingTop: "1%", overflowY: "auto", overflowX: "hidden", height: "7vh" }}>
                                     <div className="row">
-                                        <div className="col-7">
+                                        <div className="col-1">
+                                            <Link to='/'><i class="bi bi-box-arrow-left"></i></Link>
+                                        </div>
+                                        <div className="col-6">
                                             <input id="searchContact" style={{ width: "100%" }} placeholder="Search contact"></input>
                                         </div>
                                         <div className="col-2">
@@ -91,50 +96,8 @@ function MainPage() {
                                 <div id="chatPlaceHolder" style={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}>
                                     hello
                                 </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr style={{height: "80vh"}}>
-                        <td style={{width: "30%", backgroundColor: "white"}}>
-                            <div style={{paddingTop: "1%",overflowY: "auto", overflowX: "hidden", height: "80vh"}}>
-                                <div class="list-group" aria-label="attempt" id="Friends"></div>
-                            </div>
-                        </td>
-                        <td style={{width: "70%", position: "relative", height: "80vh"}} id="chatBackground">
-                            <div id="chatPlaceHolder" style={{height: "100%",overflowY: "auto", overflowX: "hidden"}}>
-                                hello
-                            </div>
-                            <div id="sendingBoard" style={{bottom: "0%",position: "absolute",width: "100%",height: "50px", backgroundColor: "aliceblue", visibility: "hidden"}}>
-                                <input type="text" style={{width: "80%", bottom: "20%", position: "inherit"}} id="typeMessage" autoComplete="off"></input>
-                                <button class="btn" style={{left: "80%", bottom:"20%", position: "inherit", color:"aliceblue", width: "5%"}} id="sendButton" onClick={sendMessage}>
-                                    <img src={sendMessageImage} style={{width: "100%"}} alt=""></img>
-                                </button>
-                                <label class="btn" style={{left: "85%",bottom:"20%", position: "inherit", color:"aliceblue", width: "5%"}}>
-                                    <input type="file" id="addImageButton" style={{visibility: "hidden", width: "100%"}} onChange={sendImage} accept="image/*"></input>
-                                    <img src={addImage} style={{width: "100%"}} alt=""></img>
-                                </label>
-                                <label class="btn" style={{left: "90%", bottom:"20%", position: "inherit", color: "aliceblue", width: "5%"}}>
-                                    <input type="file" id="attachmentButton" style={{visibility: "hidden", width: "100%"}} onChange={attachmentButton}></input>
-                                    <img src={Attachment} style={{width: "100%"}} alt=""></img>
-                                </label>
-                                <button class="btn" style={{left: "95%", bottom:"20%", position: "inherit", color:"aliceblue", width: "5%"}} id="recordButton" data-bs-toggle="modal" data-bs-target="#recordModal">
-                                    <img src={record} style={{width: "100%"}} alt=""></img>
-                                </button>
-                                <div class="modal fade" id="recordModal" tabindex="-1" aria-labelledby="recordModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="recordModalLabel">Send audio</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeModalRecord" onClick={recordManeger.closeModalRecord}></button>
-                                            </div>
-                                            <div class="modal-body" id="recordModalBody">
-                                                <button class="btn btn-primary" id="startRecord" onClick={recordManeger.startRecord}>Record</button>
-                                                <button class="btn btn-danger" id="stopRecord" onClick={recordManeger.stopRecord}>stop</button>
-                                                <button class="btn btn-warning" id="restartRecording" onClick={recordManeger.restartRecording}>Record again</button>
-                                                <div id="recordSign" style={{visibility: "hidden"}}>
-                                                    recording...
-                                <div id="sendingBoard" style={{ bottom: "0%", position: "absolute", width: "100%", height: "50px", backgroundColor: "aliceblue", visibility: "visible" }}>
-                                    <input type="text" style={{ width: "80%", bottom: "20%", position: "inherit" }} id="typeMessage"></input>
+                                <div id="sendingBoard" style={{ bottom: "0%", position: "absolute", width: "100%", height: "50px", backgroundColor: "aliceblue", visibility: "hidden" }}>
+                                    <input type="text" style={{ width: "80%", bottom: "20%", position: "inherit" }} id="typeMessage" autoComplete="off"></input>
                                     <button className="btn" style={{ left: "80%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }} id="sendButton" onClick={sendMessage}>
                                         <img src={sendMessageImage} style={{ width: "100%" }} alt=""></img>
                                     </button>
@@ -182,5 +145,4 @@ function MainPage() {
         </div>
     );
 }
-
 export default MainPage;
