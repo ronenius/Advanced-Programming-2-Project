@@ -5,7 +5,6 @@ import contactIdx from "./contactIdx";
 import updateChatBoard from "./updateChatBoard"
 import padding from "./chatPadding"
 import chatManagement from "./chatManagement";
-
 function initContact() {
     let friends = users[userIdx.value].friends;
     let PlaceHolder = document.getElementById("chatPlaceHolder");

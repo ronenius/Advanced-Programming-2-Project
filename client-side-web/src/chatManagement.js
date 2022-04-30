@@ -16,7 +16,6 @@ function displayChat(contact) {
     padding.addPadding(PlaceHolder);
     PlaceHolder.scrollTo(0,PlaceHolder.scrollHeight);
 }
-
 function chatElement(s, to, messageType) {
     var time = new Date();
     var x = {
