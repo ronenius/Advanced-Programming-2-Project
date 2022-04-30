@@ -5,6 +5,7 @@ import sendMessage from './sendMessageButton';
 import sendImage from './sendImage';
 import attachmentButton from './Attachment';
 import recordManeger from './record';
+import searchMessageManagement from "./searchMessageManagement"
 import "./InsertPictrues.css";
 import add_contact2 from './Pictures/add_contact2.png';
 import addImage from './Pictures/addImage.png';
@@ -24,7 +25,7 @@ function MainPage() {
     }, []);
 
     return (
-        <div>
+        <div id="pageBackground">
             <div className="container" style={{ top: "7%", left: "7%", position: "absolute" }}>
                 <table style={{ width: "100%" }}>
                     <tbody>
@@ -72,16 +73,14 @@ function MainPage() {
                                         <img id="curContactPicture" style={{ maxWidth: "100%" }} alt=""></img>
                                     </div>
                                     <div className="col">
-                                        <div id="curContactName" style={{ top: "2vh", position: "absolute" }}>
-                                            hey there
-                                        </div>
+                                        <div id="curContactName" style={{ top: "2vh", position: "absolute" }}></div>
                                     </div>
                                     <div className="col">
-                                        <input type="text" id="searchMessage" style={{ width: "100%" }} placeholder="Search message"></input>
+                                        <input type="text" id="searchMessage" style={{ width: "100%" }} placeholder="Search message" onChange={searchMessageManagement.searchMessage}></input>
                                     </div>
                                     <div className="col-2">
-                                        <button id="prevResult" className="btn" style={{ borderColor: "black" }}>prev</button>
-                                        <button id="nextResult" className="btn" style={{ borderColor: "black" }}>next</button>
+                                        <button id="prevResult" className="btn" style={{ borderColor: "black" }} onClick={searchMessageManagement.prevResult}>prev</button>
+                                        <button id="nextResult" className="btn" style={{ borderColor: "black" }} onClick={searchMessageManagement.nextResult}>next</button>
                                     </div>
                                 </div>
                             </td>
@@ -93,9 +92,7 @@ function MainPage() {
                                 </div>
                             </td>
                             <td style={{ width: "70%", position: "relative", height: "80vh" }} id="chatBackground">
-                                <div id="chatPlaceHolder" style={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}>
-                                    hello
-                                </div>
+                                <div id="chatPlaceHolder" style={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}></div>
                                 <div id="sendingBoard" style={{ bottom: "0%", position: "absolute", width: "100%", height: "50px", backgroundColor: "aliceblue", visibility: "hidden" }}>
                                     <input type="text" style={{ width: "80%", bottom: "20%", position: "inherit" }} id="typeMessage" autoComplete="off"></input>
                                     <button className="btn" style={{ left: "80%", bottom: "20%", position: "inherit", color: "aliceblue", width: "5%" }} id="sendButton" onClick={sendMessage}>

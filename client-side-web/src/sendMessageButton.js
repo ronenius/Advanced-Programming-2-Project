@@ -12,8 +12,9 @@ function sendMessage() {
     let friend = friends[contactIdx.value].friend;
     let idx = 0;
     for (let i = 0; i < friend.friends.length; i++) {
-        if (friend.friends[i]===users[userIdx.value]) {
+        if (friend.friends[i].friend==users[userIdx.value]) {
             idx = i;
+            console.log("happend"+i);
             break;
         }
     }

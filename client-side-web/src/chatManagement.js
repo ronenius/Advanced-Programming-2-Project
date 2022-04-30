@@ -1,5 +1,6 @@
 import timeWriter from "./timeWriter.js"
 import addMessage from "./AddMessage";
+import padding from "./chatPadding"
 import "./speechBubble.css";
 function displayChat(contact) {
     let PlaceHolder = document.getElementById("chatPlaceHolder");
@@ -10,6 +11,7 @@ function displayChat(contact) {
         PlaceHolder.innerHTML+=addMessage(contact.chat[i],contact.friend.name, contact.friend.username, i);
         console.log("added");
     }
+    padding.addPadding(PlaceHolder);
     PlaceHolder.scrollTo(0,PlaceHolder.scrollHeight);
 }
 function chatElement(s, to) {

@@ -36,6 +36,8 @@ function startRecording() {
         console.log("started");
         recordState=1;
         document.getElementById("recordSign").style.visibility = "visible";
+        document.getElementById("recordingConfirm").disabled = true;
+        document.getElementById("closeModalRecord").disabled = true;
         mediaRecorder.start();
     }
 }
@@ -54,6 +56,7 @@ function stopRecord() {
         recordState=2;
         document.getElementById("recordSign").style.visibility = "hidden";
         document.getElementById("recordEndSign").style.visibility = "visible";
+        document.getElementById("recordingConfirm").disabled = false;
     }
 }
 function restartRecording() {
@@ -62,6 +65,7 @@ function restartRecording() {
         recordedChunks = [];
         recordState = 0;
         document.getElementById("recordEndSign").style.visibility = "hidden";
+        document.getElementById("closeModalRecord").disabled = false;
     }
 }
 function recordingConfirm() {
@@ -73,7 +77,7 @@ function recordingConfirm() {
         let friend = friends[contactIdx.value].friend;
         let idx = 0;
         for (let i = 0; i < friend.friends.length; i++) {
-            if (friend.friends[i]===users[userIdx.value]) {
+            if (friend.friends[i].friend===users[userIdx.value]) {
                 idx = i;
                 break;
             }
