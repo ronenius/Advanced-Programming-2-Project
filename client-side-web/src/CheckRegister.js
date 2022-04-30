@@ -41,8 +41,12 @@ function CheckRegister(username, labelUsername, password, labelPassword, verifyP
             return;
         }
     }
-    users.push({ username: username.current.value, password: password.current.value, name: nickname.current.value, picture: imageSrc.current.value, friends: [] });
-    ConnectToMain(username.current.value, password.current.value, navigate);
+    let reader = new FileReader();
+    reader.onload = function (e) {
+        users.push({ username: username.current.value, password: password.current.value, name: nickname.current.value, picture: e.target.result, friends: [] });
+        ConnectToMain(username.current.value, password.current.value, navigate);
+    }
+    reader.readAsDataURL(imageSrc.current.files[0]);
 }
 
 function ErrorRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, validationText) {
