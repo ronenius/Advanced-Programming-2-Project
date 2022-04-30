@@ -7,7 +7,7 @@ function applySearch(s) {
     let ans = "";
     for (let i = 0; i < users[userIdx.value].friends.length; i++) {
         if (friends[i].friend.name.toLowerCase().includes(s.toLowerCase())) {
-            ans += addContactFunctions.addContactElement(friends[i].friend)
+            ans += addContactFunctions.addContactElement(friends[i])
         }
     }
     document.getElementById("Friends").innerHTML=ans;

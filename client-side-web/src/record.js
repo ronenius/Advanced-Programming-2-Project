@@ -2,6 +2,7 @@ import users from "./DataBase";
 import userIdx from "./UserIdx";
 import contactIdx from "./contactIdx"
 import chatManagement from "./chatManagement"
+import searchMessageManagement from "./searchMessageManagement"
 
 /*let source = "";
 let placeholder = document.getElementById("placeholder");
@@ -86,7 +87,7 @@ function recordingConfirm() {
         chatManagement.displayChat(friends[contactIdx.value]);
         document.getElementById("recordEndSign").style.visibility = "hidden";
         chatManagement.updateTime(friends[contactIdx.value]);
-        //resetMessageSearch();
+        searchMessageManagement.resetMessageSearch();
     }
     else if (recordState === 1) {
         mediaRecorder.stop();

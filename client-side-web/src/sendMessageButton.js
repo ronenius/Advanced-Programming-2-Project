@@ -2,6 +2,7 @@ import contactIdx from "./contactIdx";
 import users from "./DataBase";
 import userIdx from "./UserIdx";
 import chatManager from "./chatManagement.js";
+import searchMessageManagement from "./searchMessageManagement";
 function sendMessage() {
     let input = document.getElementById("typeMessage").value;
     let friends = users[userIdx.value].friends;
@@ -21,6 +22,6 @@ function sendMessage() {
     friend.friends[idx].chat.push(chatManager.chatElement(input, false, "text"));
     chatManager.displayChat(friends[contactIdx.value]);
     chatManager.updateTime(friends[contactIdx.value]);
-    //resetMessageSearch();
+    searchMessageManagement.resetMessageSearch();
 }
 export default sendMessage

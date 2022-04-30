@@ -2,7 +2,7 @@ import chatManagement from "./chatManagement";
 import contactIdx from "./contactIdx";
 import users from "./DataBase";
 import userIdx from "./UserIdx";
-
+import searchMessageManagement from "./searchMessageManagement";
 function videoButton(event) {
     let files = event.target.files;
     let friends = users[userIdx.value].friends;
@@ -21,5 +21,6 @@ function videoButton(event) {
     chatManagement.displayChat(friends[contactIdx.value]);
     chatManagement.updateTime(friends[contactIdx.value]);
     event.target.value=null;
+    searchMessageManagement.resetMessageSearch();
 }
 export default videoButton;

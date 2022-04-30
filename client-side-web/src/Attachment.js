@@ -2,6 +2,7 @@ import users from "./DataBase";
 import userIdx from "./UserIdx";
 import contactIdx from "./contactIdx";
 import chatManagement from "./chatManagement";
+import searchMessageManagement from "./searchMessageManagement";
 
 function attachmentButton(event) {
     let files = event.target.files;
@@ -23,7 +24,7 @@ function attachmentButton(event) {
         chatManagement.displayChat(friends[contactIdx.value]);
         chatManagement.updateTime(friends[contactIdx.value]);
         event.target.value=null;
-        //resetMessageSearch();
+        searchMessageManagement.resetMessageSearch();
     }
     reader.readAsDataURL(files[0]);
 };
