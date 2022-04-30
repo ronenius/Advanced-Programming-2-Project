@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import logo from './logo.png';
+import logo from './Pictures/logo.png'
 import InputImage from './InputImage.js';
 import CheckRegister from './CheckRegister';
 import './Register.css';

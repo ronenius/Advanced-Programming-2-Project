@@ -1,5 +1,6 @@
 import ConnectToMain from "./ConnectToMain.js";
 import users from './DataBase.js';
+import contactPicture from './Pictures/contactPicture.png'
 
 function CheckRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, navigate) {
     if (username.current.value.length === 0) {
@@ -40,6 +41,10 @@ function CheckRegister(username, labelUsername, password, labelPassword, verifyP
             ErrorRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, validationText);
             return;
         }
+    }
+    if (imageSrc.current.files.length === 0) {
+        users.push({ username: username.current.value, password: password.current.value, name: nickname.current.value, picture: contactPicture, friends: [] });
+        ConnectToMain(username.current.value, password.current.value, navigate);
     }
     let reader = new FileReader();
     reader.onload = function (e) {

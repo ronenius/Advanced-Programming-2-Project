@@ -4,12 +4,14 @@ import addMessage from "./AddMessage";
 import contactIdx from "./contactIdx";
 import updateChatBoard from "./updateChatBoard"
 import padding from "./chatPadding"
+import chatManagement from "./chatManagement";
+
 function initContact() {
     let friends = users[userIdx.value].friends;
     let PlaceHolder = document.getElementById("chatPlaceHolder");
     for (let i = 0; i < friends.length; i++) {
         let f = document.getElementById(friends[i].friend.username);
-        if(f!=null)
+        if(f!=null) {
             f.onclick = function() {
                 PlaceHolder.innerHTML="";
                 console.log(friends[i].chat);
@@ -22,6 +24,10 @@ function initContact() {
                 padding.addPadding(PlaceHolder);
                 document.getElementById("sendingBoard").style.visibility = "visible";
             }
+            if (friends[i].chat.length !== 0) {
+                chatManagement.updateTime(friends[i]);
+            }
+        }
     }
 }
 export default initContact;

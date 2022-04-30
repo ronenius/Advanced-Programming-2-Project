@@ -16,6 +16,7 @@ import initContact from './InitializeContacts';
 import initUser from './initUser';
 import userIdx from './UserIdx';
 import users from './DataBase';
+import logo from './Pictures/logo.png'
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -34,7 +35,7 @@ function MainPage() {
                                 <div style={{ paddingTop: "1%", overflowY: "auto", overflowX: "hidden", height: "7vh" }}>
                                     <div className="row">
                                         <div className="col-1">
-                                            <Link to='/'><i class="bi bi-box-arrow-left"></i></Link>
+                                            <Link to='/' style={{ marginLeft: "5px" }}><i class="bi bi-box-arrow-left"></i></Link>
                                         </div>
                                         <div className="col-6">
                                             <input id="searchContact" style={{ width: "100%" }} placeholder="Search contact"></input>
@@ -70,10 +71,10 @@ function MainPage() {
                             <td>
                                 <div className="row" style={{ visibility: "hidden" }} id="curContactBoard">
                                     <div className="col-1">
-                                        <img id="curContactPicture" style={{ maxWidth: "100%" }} alt=""></img>
+                                        <img id="curContactPicture" className="rounded-circle" height="40px" width="40px" style={{ objectFit: "cover", marginLeft: "5px", marginTop: "5px" }} alt="contactPicture"></img>
                                     </div>
                                     <div className="col">
-                                        <div id="curContactName" style={{ top: "2vh", position: "absolute" }}></div>
+                                        <div id="curContactName" style={{ top: "2vh", position: "absolute", fontSize: "20px" }}></div>
                                     </div>
                                     <div className="col">
                                         <input type="text" id="searchMessage" style={{ width: "100%" }} placeholder="Search message" onChange={searchMessageManagement.searchMessage}></input>

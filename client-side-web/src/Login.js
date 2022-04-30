@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import logo from './logo.png'
+import logo from './Pictures/logo.png'
 import './Login.css'
 import { Link } from 'react-router-dom';
 import CheckLogIn from './CheckLogIn.js'

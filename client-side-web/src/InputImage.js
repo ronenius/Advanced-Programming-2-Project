@@ -28,7 +28,7 @@ function Image({ result, setResult, srcRef }) {
             <div className="row" id="inputPicture">
                 {result && <div className="col">
                     <button id="modalButton" height="100px" width="100px" onClick={dontReload} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img ref={imageRef} className="rounded-circle" height="100px" width="100px" src={result} alt="profile_picture" />
+                        <img ref={imageRef} className="rounded-circle" height="100px" width="100px" style={{ objectFit: "cover" }} src={result} alt="profile_picture" />
                     </button>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog">

@@ -1,2 +1,2 @@
-var userIdx = {value:2};
+var userIdx = { value: 0 };
 export default userIdx;

@@ -1,32 +1,23 @@
-const users = [{ username: "Shlomy", password: "Shlomy123", name: "Shlomy", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Shabat", password: "Shabat123", name: "Shabat", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Shalom", password: "Shalom123", name: "Shalom", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Wumevorah", password: "Wumevorah123", name: "Wumevorah", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Alice", password: "Alice123", name: "Alice", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Bob", password: "Bob123", name: "Bob", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Eve", password: "Eve123", name: "Eve", picture: "Pictures/contatcPicture.png", friends: [] },
-{ username: "Teodor", password: "Teodor123", name: "teodor", picture: "Pictures/contatcPicture.png", friends: [] }];
+import contactPicture from './Pictures/contactPicture.png'
+import ShlomysPicture from './Pictures/ShlomysPicture.png'
+import chatManagement from './chatManagement.js';
+import recording from './Pictures/recording.mp3';
+import pi from './Pictures/pi.txt';
+
+const users = [{ username: "Shlomy", password: "Shlomy123", name: "Shlomy", picture: contactPicture, friends: [] },
+{ username: "Shabat", password: "Shabat123", name: "Shabat", picture: contactPicture, friends: [] },
+{ username: "Shalom", password: "Shalom123", name: "Shalom", picture: contactPicture, friends: [] },
+{ username: "Wumevorah", password: "Wumevorah123", name: "Wumevorah", picture: contactPicture, friends: [] },
+{ username: "Alice", password: "Alice123", name: "Alice", picture: contactPicture, friends: [] },
+{ username: "Bob", password: "Bob123", name: "Bob", picture: contactPicture, friends: [] },
+{ username: "Eve", password: "Eve123", name: "Eve", picture: contactPicture, friends: [] },
+{ username: "Teodor", password: "Teodor123", name: "teodor", picture: contactPicture, friends: [] }];
 
 export function connect(i, j) {
-    users[i].friends.push({friend:users[j],chat:[{
-        contance : "hello",
-        hour:0,
-        minute:0,
-        day:0,
-        month:0,
-        year:0,
-        sent:true}]});
-    users[j].friends.push({friend:users[i],chat:[
-        {
-            contance : "world",
-            hour:0,
-            minute:0,
-            day:0,
-            month:0,
-            year:0,
-            sent:false}
-    ]});
+    users[i].friends.push({ friend: users[j], chat: [] });
+    users[j].friends.push({ friend: users[i], chat: [] });
 }
+
 export function initUsers() {
     connect(0, 1);
     connect(0, 2);
@@ -48,6 +39,23 @@ export function initUsers() {
     connect(5, 6);
     connect(5, 7);
     connect(6, 7);
+    for (let i = 0; i < 5; i++) {
+        users[0].friends[i].chat.push(chatManagement.chatElement("Hello, my name is Anton and I like Hot Potato!", true, "text"));
+        users[0].friends[i].chat.push(chatManagement.chatElement("<img src=\"" + ShlomysPicture + "\" style=\"max-width:30vh\"><br><br>", true, "image"));
+        users[0].friends[i].chat.push(chatManagement.chatElement("<audio src=\"" + recording + "\" style=\"max-width:30vh;\" controls></audio>", true, "audio"));
+        users[0].friends[i].chat.push(chatManagement.chatElement("<a href=\"" + pi + "\" download=\"pi.txt\">pi.txt</a>", true, "file"));
+        let friend = users[0].friends[i].friend;
+        let j = 0;
+        for (j = 0; j < friend.friends.length; j++) {
+            if (friend.friends[j].friend === users[0]) {
+                break;
+            }
+        }
+        friend.friends[j].chat.push(chatManagement.chatElement("Hello, my name is Anton and I like Hot Potato!", false, "text"));
+        friend.friends[j].chat.push(chatManagement.chatElement("<img src=\"" + ShlomysPicture + "\" style=\"max-width:30vh\"><br><br>", false, "image"));
+        friend.friends[j].chat.push(chatManagement.chatElement("<audio src=\"" + recording + "\" style=\"max-width:30vh;\" controls></audio>", false, "audio"));
+        friend.friends[j].chat.push(chatManagement.chatElement("<a href=\"" + pi + "\" download=\"pi.txt\">pi.txt</a>", false, "file"));
+    }
 }
 
 export default users;
