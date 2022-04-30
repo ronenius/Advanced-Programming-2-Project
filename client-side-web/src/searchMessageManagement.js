@@ -29,7 +29,7 @@ function searchMessage() {
 function prevResult() {
     if (messagesSearched.length === 0)
         return;
-    if (messageIdx!=0) {
+    if (messageIdx!==0) {
         messageIdx--;
         document.getElementById("chatPlaceHolder").scrollTo(0,messagesSearched[messageIdx].offsetTop);
     }
@@ -37,7 +37,7 @@ function prevResult() {
 function nextResult() {
     if (messagesSearched.length === 0)
         return;
-    if (messageIdx!=messagesSearched.length - 1) {
+    if (messageIdx!==messagesSearched.length - 1) {
         messageIdx++;
         document.getElementById("chatPlaceHolder").scrollTo(0,messagesSearched[messageIdx].offsetTop);
     }

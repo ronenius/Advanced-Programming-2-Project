@@ -3,6 +3,7 @@ import ShlomysPicture from './Pictures/ShlomysPicture.png'
 import chatManagement from './chatManagement.js';
 import recording from './Pictures/recording.mp3';
 import pi from './Pictures/pi.txt';
+import video from './Pictures/goodvideo.mp4';
 
 const users = [{ username: "Shlomy", password: "Shlomy123", name: "Shlomy", picture: contactPicture, friends: [] },
 { username: "Shabat", password: "Shabat123", name: "Shabat", picture: contactPicture, friends: [] },
@@ -44,6 +45,7 @@ export function initUsers() {
         users[0].friends[i].chat.push(chatManagement.chatElement("<img src=\"" + ShlomysPicture + "\" style=\"max-width:30vh\"><br><br>", true, "image"));
         users[0].friends[i].chat.push(chatManagement.chatElement("<audio src=\"" + recording + "\" style=\"max-width:30vh;\" controls></audio>", true, "audio"));
         users[0].friends[i].chat.push(chatManagement.chatElement("<a href=\"" + pi + "\" download=\"pi.txt\">pi.txt</a>", true, "file"));
+        users[0].friends[i].chat.push(chatManagement.chatElement("<video width=\"400vw\" src=\"" + video + "\" controls></video>", true, "video"));
         let friend = users[0].friends[i].friend;
         let j = 0;
         for (j = 0; j < friend.friends.length; j++) {
@@ -55,6 +57,7 @@ export function initUsers() {
         friend.friends[j].chat.push(chatManagement.chatElement("<img src=\"" + ShlomysPicture + "\" style=\"max-width:30vh\"><br><br>", false, "image"));
         friend.friends[j].chat.push(chatManagement.chatElement("<audio src=\"" + recording + "\" style=\"max-width:30vh;\" controls></audio>", false, "audio"));
         friend.friends[j].chat.push(chatManagement.chatElement("<a href=\"" + pi + "\" download=\"pi.txt\">pi.txt</a>", false, "file"));
+        friend.friends[j].chat.push(chatManagement.chatElement("<video width=\"400vw\" src=\"" + video + "\" controls></video>", false, "video"));
     }
 }
 

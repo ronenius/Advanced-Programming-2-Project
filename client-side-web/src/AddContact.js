@@ -1,4 +1,4 @@
-import users, { initUsers } from './DataBase.js'
+import users from './DataBase.js';
 import { connect } from './DataBase';
 import userIdx from './UserIdx';
 import initContact from './InitializeContacts.js';
