@@ -15,7 +15,6 @@ function sendMessage() {
     for (let i = 0; i < friend.friends.length; i++) {
         if (friend.friends[i].friend===users[userIdx.value]) {
             idx = i;
-            console.log("happend"+i);
             break;
         }
     }

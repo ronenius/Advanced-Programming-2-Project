@@ -7,11 +7,8 @@ import getLastMessage from "./lastMessage.js";
 function displayChat(contact) {
     let PlaceHolder = document.getElementById("chatPlaceHolder");
     PlaceHolder.innerHTML="";
-    console.log(contact);
     for (let i = 0; i < contact.chat.length; i++) {
-        console.log(contact);
         PlaceHolder.innerHTML+=addMessage(contact.chat[i],contact.friend.name, contact.friend.username, i);
-        console.log("added");
     }
     padding.addPadding(PlaceHolder);
     PlaceHolder.scrollTo(0,PlaceHolder.scrollHeight);

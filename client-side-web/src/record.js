@@ -14,27 +14,18 @@ let source = "";
 let recordState = -1;
 let record = function(stream) {
     let options = {mimeType: 'audio/webm'};
-    console.log("line 96");
     mediaRecorder = new MediaRecorder(stream, options);
-    console.log("line 98");
     mediaRecorder.addEventListener('dataavailable', function(e) {
-        console.log("line 100");
         if (e.data.size > 0) recordedChunks.push(e.data);
-        console.log("line 102");
     });
-    console.log("line 104");
     mediaRecorder.addEventListener('stop', function() {
-        console.log("line 106");
         source = URL.createObjectURL(new Blob(recordedChunks));
-        console.log("line 108");
     });
-    console.log("line 110");
     recordState = 0;
     startRecording();
 };
 function startRecording() {
     if (recordState === 0) {
-        console.log("started");
         recordState=1;
         document.getElementById("recordSign").style.visibility = "visible";
         document.getElementById("recordingConfirm").disabled = true;
@@ -43,15 +34,12 @@ function startRecording() {
     }
 }
 function startRecord() {
-    console.log("entered");
-    console.log("line 116");
     if (recordState === -1)
         navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(record);
     else
         startRecording();
 }
 function stopRecord() {
-    console.log("entered stop");
     if (recordState === 1) {
         mediaRecorder.stop();
         recordState=2;
@@ -61,7 +49,6 @@ function stopRecord() {
     }
 }
 function restartRecording() {
-    console.log("entered restart")
     if (recordState === 2) {
         recordedChunks = [];
         recordState = 0;
@@ -71,7 +58,6 @@ function restartRecording() {
 }
 function recordingConfirm() {
     let friends = users[userIdx.value].friends;
-    console.log("sending");
     if (recordState === 2) {
         document.getElementById("stopRecord").onclick();
         friends[contactIdx.value].chat.push(chatManagement.chatElement("<audio src=\""+source+"\" style=\"max-width:30vh;\" controls></audio>", true, "audio"));
@@ -103,7 +89,6 @@ function recordingConfirm() {
     recordedChunks = [];
     source="";
     recordState = 0;
-    console.log("deleted");
 }
 function closeModalRecord() {
     if (recordState === 1) {
