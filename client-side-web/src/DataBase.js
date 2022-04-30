@@ -1,11 +1,12 @@
-const users = [{username:"Shlomy", password:"Shlomy123", name:"Shlomy", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Shabat", password:"Shabat123", name:"Shabat", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Shalom", password:"Shalom123", name:"Shalom", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Wumevorah", password:"Wumevorah123", name:"Wumevorah", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Alice", password:"Alice123", name:"Alice", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Bob", password:"Bob123", name:"Bob", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Eve", password:"Eve123", name:"Eve", picture:"Pictures/contatcPicture.png", friends:[]},
-{username:"Teodor", password:"Teodor123", name:"teodor", picture:"Pictures/contatcPicture.png", friends:[]}];
+const users = [{ username: "Shlomy", password: "Shlomy123", name: "Shlomy", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Shabat", password: "Shabat123", name: "Shabat", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Shalom", password: "Shalom123", name: "Shalom", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Wumevorah", password: "Wumevorah123", name: "Wumevorah", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Alice", password: "Alice123", name: "Alice", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Bob", password: "Bob123", name: "Bob", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Eve", password: "Eve123", name: "Eve", picture: "Pictures/contatcPicture.png", friends: [] },
+{ username: "Teodor", password: "Teodor123", name: "teodor", picture: "Pictures/contatcPicture.png", friends: [] }];
+
 export function connect(i, j) {
     users[i].friends.push({friend:users[j],chat:[{
         contance : "hello",

@@ -30,9 +30,9 @@ function Image({ result, setResult, srcRef }) {
                     <button id="modalButton" height="100px" width="100px" onClick={dontReload} data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <img ref={imageRef} className="rounded-circle" height="100px" width="100px" src={result} alt="profile_picture" />
                     </button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
+                    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
                                 <img ref={imageRef} height="80%" src={result} alt="profile_picture" />
                             </div>
                         </div>

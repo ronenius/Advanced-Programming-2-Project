@@ -16,13 +16,13 @@ function Register() {
     const labelVerifyPassword = useRef(null);
     const nickname = useRef(null);
     const labelNickname = useRef(null);
-    const imageSrc=useRef(null)
+    const imageSrc = useRef(null);
     const validationText = useRef(null);
     const navigate = useNavigate();
 
     function validation(e) {
         e.preventDefault();
-        CheckRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, setResult, navigate);
+        CheckRegister(username, labelUsername, password, labelPassword, verifyPassword, labelVerifyPassword, nickname, labelNickname, imageSrc, validationText, navigate);
     }
 
     return (

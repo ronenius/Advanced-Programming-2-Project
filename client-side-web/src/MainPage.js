@@ -13,6 +13,7 @@ import sendMessageImage from './Pictures/sendMessage.png';
 import record from './Pictures/record.png';
 import initUser from './initUser';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function MainPage() {
     useEffect(() => {
@@ -28,7 +29,10 @@ function MainPage() {
                             <td style={{ width: "30%" }}>
                                 <div style={{ paddingTop: "1%", overflowY: "auto", overflowX: "hidden", height: "7vh" }}>
                                     <div className="row">
-                                        <div className="col-7">
+                                        <div className="col-1">
+                                            <Link to='/'><i class="bi bi-box-arrow-left"></i></Link>
+                                        </div>
+                                        <div className="col-6">
                                             <input id="searchContact" style={{ width: "100%" }} placeholder="Search contact"></input>
                                         </div>
                                         <div className="col-2">
