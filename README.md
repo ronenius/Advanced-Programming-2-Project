@@ -1,6 +1,6 @@
 # Advanced-Programming-2-Project
 
-The app works with react. Inside the folder "client-side-web", is the src folder. To run it, type cd to "client-side-web" and "npm start" from the terminal.
+The app works with react. In order to run the client, you need to install node js and npm. Inside the folder "client-side-web", is the src folder. To run it, type cd to "client-side-web" and "npm install react-scripts@latest" to install the react-scripts library and then "npm start" to start the client from the terminal.
 In the homepage, there is a log in page. if the login info is correct, it will link to the mainpage.
 There is also a registration part, where you can register a new account, with username, password, nickname, and picture (username and nickname mustn't be empty and password must have at least 6 characters and a letter and a number). There is also an option in the registration to assign a profile picture and preview it by clicking on it.
 In the main page there is a contact part, where you can search for contacts by name, and add new contacts by their username (not nickname).
